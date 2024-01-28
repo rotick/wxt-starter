@@ -12,7 +12,7 @@ const count = ref(0)
 <template>
   <h1>{{ msg }} {{ $t('extensionName') }}</h1>
 
-  <div class="card">
+  <div class="card w-[264px]">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
