@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import locales from '~/locale'
+import locales from '~/locales'
 import DropDown from './DropDown.vue'
 
-console.log(locales)
 const { locale } = useI18n()
 const currentLocale = computed(() => {
   return locales.find((i: any) => i.code === locale.value)
 })
 const rtl = computed(() => ['ar', 'he'].includes(locale.value))
-async function switchLanguage (code, close) {
+async function switchLanguage (code: string, close: () => void) {
   locale.value = code
   await storage.setItem('sync:lang', code)
   close()

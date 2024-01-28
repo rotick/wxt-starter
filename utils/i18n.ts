@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 // Use your default locale when importing the schema
 import type schema from '~/lang/en.json'
 import messages from '@intlify/unplugin-vue-i18n/messages'
-import locales from '~/locale'
+import locales from '@/locales'
 
 const localeCodes = locales.map(l => l.code)
 

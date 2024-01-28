@@ -4,7 +4,7 @@ import { localePrompt } from './prompts'
 import { promises as fs } from 'node:fs'
 import { chatGPT } from './openAI'
 import stringify from 'json-stringify-pretty-compact'
-import locale from '../locale'
+import locales from '../locales'
 
 const getDiffKeys = (obj1: any, obj2: any) => {
   return Object.keys(obj2).reduce((diff: any, key) => {
@@ -43,7 +43,7 @@ async function main (lang: string) {
 
 // const badResult = ['da', 'fi', 'he', 'hu', 'id', 'it', 'th', 'tr'].map(lang => ({ code: lang }))
 async function go () {
-  for (const l of locale) {
+  for (const l of locales) {
     if (l.code !== 'en' && l.code !== 'zh-hans') {
       await main(l.code)
     }
