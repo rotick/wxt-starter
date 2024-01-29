@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computePosition, offset, flip, shift } from '@floating-ui/dom'
+import { useResizeObserver } from '@vueuse/core'
 
 let button: HTMLElement
 let tooltip: HTMLElement
@@ -33,6 +34,7 @@ onMounted(async () => {
 onUnmounted(() => {
   button.removeEventListener('click', showTooltip)
 })
+useResizeObserver(document.documentElement, update)
 </script>
 
 <template>

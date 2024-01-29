@@ -7,7 +7,7 @@ export default {
     extend: {
       colors: {
         primary: colors.sky,
-        gray: colors.slate
+        gray: colors.neutral
       }
     }
   },

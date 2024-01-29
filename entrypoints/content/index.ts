@@ -13,6 +13,9 @@ export default defineContentScript({
       onMount: (container) => {
         const app = createApp(App)
         app.use(i18n).mount(container)
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          container.classList.add('dark')
+        }
         return app
       },
       onRemove: (app) => {
