@@ -23,7 +23,7 @@ function showTooltip () {
 }
 
 function hideTooltip () {
-  tooltip.style.display = 'none'
+  tooltip.style.display = 'none';
 }
 onMounted(async () => {
   await nextTick()
