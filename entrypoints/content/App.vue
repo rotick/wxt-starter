@@ -23,7 +23,7 @@ function showTooltip () {
 }
 
 function hideTooltip () {
-  tooltip.style.display = 'none';
+  tooltip.style.display = 'none'
 }
 onMounted(async () => {
   await nextTick()
@@ -32,6 +32,7 @@ onMounted(async () => {
   button.addEventListener('click', showTooltip)
 })
 onUnmounted(() => {
+  hideTooltip()
   button.removeEventListener('click', showTooltip)
 })
 useResizeObserver(document.documentElement, update)
@@ -41,6 +42,4 @@ useResizeObserver(document.documentElement, update)
   <div id="extension-popover" class="fixed hidden bg-body" :style="position">Hello world {{ $t('extensionName') }}</div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
